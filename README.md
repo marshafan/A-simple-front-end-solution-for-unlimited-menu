@@ -37,7 +37,7 @@
  <li  class='menu-item'><a>菜单名2<a/></li>
 </ul>
 /*子菜单块*/
-</ul>
+</li>
 ``` 
 <br>
 ## dom的表现：
@@ -58,7 +58,7 @@ display:none;
 {
 display:block;
 }
-```
+``` 
 <br>
 3、显示菜单块的状态下，再点击所属菜单项，则菜单块隐藏（去掉chosen）
 
