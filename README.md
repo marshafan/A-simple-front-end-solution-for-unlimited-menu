@@ -12,7 +12,6 @@
 显示所属菜单块对应的菜单项（又是一个选中菜单项的操作）...直到没有需要显示的菜单块为止<br>
 <br>
 ## 基本结构
-<br><br>
 1、菜单项：<br>
 ```
 <li class='menu-item'>
@@ -23,22 +22,22 @@
 2、多个菜单项组成菜单块<br>
 ```
 <ul class='menu-block'>
- <li  class='menu-item'><a/></li>
- <li  class='menu-item'><a/></li>
+ <li  class='menu-item'><a>菜单名1<a/></li>
+ <li  class='menu-item'><a>菜单名2<a/></li>
 </ul>
 ``` 
 <br>
-3、菜单项中添加子菜单块，<br
+3、菜单项中添加子菜单块，<br>
 ```
 <li class='menu-item'>
-<a/>
+<a>菜单名<a/>
 /*子菜单块*/
 <ul class='menu-block'>
- <li  class='menu-item'/><a/>
- <li  class='menu-item'/><a/>
+ <li  class='menu-item'><a>菜单名1<a/></li>
+ <li  class='menu-item'><a>菜单名2<a/></li>
 </ul>
 /*子菜单块*/
-</li>
+</ul>
 ``` 
 <br>
 ## dom的表现：
