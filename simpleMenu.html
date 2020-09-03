@@ -1,0 +1,129 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <style type="text/css">
+        .menu-item {
+            list-style: none;
+            width: 100%;
+            position: relative;
+        }
+
+        .menu-item a {
+            display: block;
+            height: 20px;
+            line-height: 20px;
+            background-color: grey;
+            color: #fff;
+
+        }
+
+        .menu-item span {
+            position: absolute;
+            top: 0;
+            right: 5px;
+            height: 20px;
+            line-height: 20px;
+            color: #fff;
+        }
+
+        .root-menu-item {
+            width: 200px;
+            background: grey;
+        }
+
+        .menu-block {
+            margin: 0;
+        }
+
+        .menu-item>.menu-block {
+            display: none;
+        }
+
+        .menu-item.chosen>.menu-block {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <li class="menu-item root-menu-item" data-id="0">
+        <a>系统管理</a>
+        <span>+</span>
+        <ul class="menu-block">
+            <li class="menu-item" data-id="1">
+                <a>菜单1</a>
+                <span>+</span>
+                <ul class="menu-block">
+                    <li class="menu-item" data-id="2">
+                        <a>子菜单1</a>
+                    </li>
+                    <li class="menu-item" data-id="3">
+                        <a>子菜单2</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-item" data-id="4">
+                <a>菜单2</a>
+                <span>+</span>
+                <ul class="menu-block">
+                    <li class="menu-item" data-id="5">
+                        <a>子菜单1</a>
+                    </li>
+                    <li class="menu-item" data-id="6">
+                        <a>子菜单2</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        </div>
+
+        <script>
+            $(function () {
+                addMenuClickEvent();
+            })
+
+            function addMenuClickEvent() {
+                $('.menu-item a').click(function (e) {
+                    var $menuItem = $($(e.currentTarget).parent('.menu-item'));
+                    var $indiSpan = $(e.currentTarget).siblings('span');
+                    if ($menuItem.hasClass('chosen')) {
+                        //menuitem 去掉chosen
+                        $menuItem.removeClass('chosen');
+                        //span变成+
+                        $indiSpan.text('+')
+
+                    } else {
+                        //menuitem 加chosen
+                        $menuItem.addClass('chosen');
+                        //span变成-
+                        $indiSpan.text('-')
+                        //menuitem的同级 去掉chosen
+                        //$menuItem.siblings().removeClass('chosen');
+                    }
+
+                })
+            }
+
+            /**
+             * 指定展示某一个菜单
+             * @param {Number} id 菜单项的data-id属性
+             * @parem {Selector} $item 菜单项
+             * @return{void}
+            */
+            function showMenu(id, $item) {
+                var $menuItem = (id && $('.menu-item[data-id="' + id + '"]')) || $item;
+                //找到父菜单项 $parent
+                $menuBlock = $($menuItem.parent('.menu-block'));
+                if($menuBlock.length!=0){
+                    var $parent=$($menuBlock.parent('.menu-item'));
+                    $parent.addClass('chosen');
+                    showMenu(null, $parent); //继续找下去
+                }
+            }
+        </script>
+
+</body>
+
+</html>
