@@ -25,7 +25,7 @@
   <li  class='menu-item'><a>菜单名2<a/></li>
  </ul>
 ```   
-3、菜单项中添加子菜单块，<br>
+3、菜单项中添加子菜单块，
 ```
 <li class='menu-item'>
 <a>菜单名<a/>
@@ -37,10 +37,9 @@
 /*子菜单块*/
 </li>
 ``` 
-<br>
+
 ## dom的表现：
-<br>
-1、菜单块默认不显示<br>
+1、菜单块默认不显示
 即
 ```
 .menu-item>.menu-block
@@ -48,8 +47,7 @@
 display:none;
 }
 ``` 
-<br>
-2、当点击菜单项时，其中的菜单块显示<br>
+2、当点击菜单项时，其中的菜单块显示
 即 
 ```
 .menu-item.chosen>.menu-block
@@ -57,7 +55,6 @@ display:none;
 display:block;
 }
 ``` 
-<br>
 3、显示菜单块的状态下，再点击所属菜单项，则菜单块隐藏（去掉chosen）
 
 
