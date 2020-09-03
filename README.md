@@ -14,19 +14,17 @@
 ## 基本结构
 1、菜单项：<br>
 ```
-<li class='menu-item'>
-<a>菜单名</a>
-</li>
+   <li class='menu-item'>
+   <a>菜单名</a>
+   </li>
 ``` 
-<br>
-2、多个菜单项组成菜单块<br>
+2、多个菜单项组成菜单块
 ```
-<ul class='menu-block'>
- <li  class='menu-item'><a>菜单名1<a/></li>
- <li  class='menu-item'><a>菜单名2<a/></li>
-</ul>
-``` 
-<br>
+ <ul class='menu-block'>
+  <li  class='menu-item'><a>菜单名1<a/></li>
+  <li  class='menu-item'><a>菜单名2<a/></li>
+ </ul>
+```   
 3、菜单项中添加子菜单块，<br>
 ```
 <li class='menu-item'>
